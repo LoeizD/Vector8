@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vector8 | Next-Gen Real-Time Technologies</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://placehold.co/32x32/1a202c/ffffff?text=V8" type="image/png">
+
+    <script>
+        // Custom Tailwind CSS configuration
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-primary': '#0A192F', // Navy
+                        'brand-secondary': '#172A45', // Lighter Navy
+                        'brand-accent': '#64FFDA', // Mint Green
+                        'brand-light': '#CCD6F6', // Light Slate
+                        'brand-dark': '#8892B0', // Slate
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Simple scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A192F;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #172A45;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8892B0;
+        }
+        .section {
+            opacity: 0; /* Initially hidden for animation */
+        }
+    </style>
+</head>
+<body class="bg-brand-primary text-brand-light font-sans antialiased">
+
+    <!-- Header -->
+    <header id="header" class="bg-brand-primary/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-brand-accent">
+                Vector8
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#services" class="hover:text-brand-accent transition-colors duration-300">Services</a>
+                <a href="#about" class="hover:text-brand-accent transition-colors duration-300">About</a>
+                <a href="#mission" class="hover:text-brand-accent transition-colors duration-300">Mission</a>
+                <a href="#contact" class="bg-transparent border border-brand-accent text-brand-accent px-4 py-2 rounded-md hover:bg-brand-accent/10 transition-colors duration-300">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-brand-light focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#services" class="block py-2 px-6 hover:bg-brand-secondary hover:text-brand-accent">Services</a>
+            <a href="#about" class="block py-2 px-6 hover:bg-brand-secondary hover:text-brand-accent">About</a>
+            <a href="#mission" class="block py-2 px-6 hover:bg-brand-secondary hover:text-brand-accent">Mission</a>
+            <a href="#contact" class="block py-2 px-6 hover:bg-brand-secondary hover:text-brand-accent">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center justify-center section">
+            <div class="max-w-3xl text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4">
+                    Fueling Next-Gen Real-Time Technologies
+                </h1>
+                <p class="text-lg md:text-xl text-brand-dark mb-8">
+                    We build the future of AI, gaming, simulation, and visualization with cutting-edge, real-time solutions.
+                </p>
+                <a href="#services" class="bg-brand-accent text-brand-primary font-bold py-3 px-8 rounded-md hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">
+                    Explore Our Work
+                </a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 section">
+            <h2 class="text-3xl font-bold text-center mb-12 text-white">What We Do</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service Card 1: Consultancy -->
+                <div class="bg-brand-secondary p-8 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-brand-accent/10 text-brand-accent mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Consultancy</h3>
+                    <p class="text-brand-dark">Expert-driven Unreal Engine solutions for gaming, AI, robotics, and visualization. We bridge the gap between artists and engineers.</p>
+                </div>
+                <!-- Service Card 2: Middleware -->
+                <div class="bg-brand-secondary p-8 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-brand-accent/10 text-brand-accent mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Middleware</h3>
+                    <p class="text-brand-dark">Custom-built software and tools designed to solve complex development challenges and streamline production pipelines.</p>
+                </div>
+                <!-- Service Card 3: Video Games -->
+                <div class="bg-brand-secondary p-8 rounded-lg shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center justify-center h-12 w-12 rounded-full bg-brand-accent/10 text-brand-accent mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Video Games</h3>
+                    <p class="text-brand-dark">Captivating gaming IPs that showcase our technical prowess and creative vision, developed with rapid, market-aware cycles.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 section">
+            <h2 class="text-3xl font-bold text-center mb-12 text-white">The Founder</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3 text-center">
+                    <img src="https://storage.googleapis.com/dialogflow-essentials-agent-images-internal/e31f0e47-a4b5-4b08-b1b0-c8172d1f0896.png" 
+                         alt="Corentin Derbre, Founder of Vector8" 
+                         class="w-48 h-48 md:w-64 md:h-64 rounded-full mx-auto object-cover shadow-lg border-4 border-brand-secondary">
+                    <h3 class="text-2xl font-bold text-white mt-4">Corentin Derbre</h3>
+                    <p class="text-brand-accent">Entrepreneur & Real-Time Expert</p>
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-brand-dark mb-4">
+                        Corentin Derbre is a serial entrepreneur with a deep-rooted passion for technology and art. From launching a video game studio, <span class="text-brand-accent">Concrete Games</span>, to pioneering software for 3D printing, his career is marked by innovation.
+                    </p>
+                    <p class="text-brand-dark mb-4">
+                        As a consultant, he has lent his real-time rendering expertise to global giants like <span class="text-white">Microsoft</span>, <span class="text-white">Temasek</span>, and <span class="text-white">Industrial Light & Magic (Disney)</span>. His artistic work has gained international recognition, and he actively fosters the tech community as the organizer of the <span class="text-white">Unreal Engine Meetup</span> in Singapore.
+                    </p>
+                    <p class="text-brand-dark">
+                        With Vector8, Corentin consolidates his vast experience to push the boundaries of real-time technology and create compelling new intellectual properties.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section id="mission" class="py-20 text-center section">
+            <h2 class="text-3xl font-bold text-white mb-4">Our Mission</h2>
+            <p class="max-w-3xl mx-auto text-lg text-brand-dark">
+                To be at the forefront of the real-time technology revolution. We empower studios and creators by developing powerful, customized software and our own innovative video games, turning visionary ideas into digital reality.
+            </p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 text-center section">
+            <h2 class="text-3xl font-bold text-white mb-4">Let's Build Together</h2>
+            <p class="max-w-xl mx-auto text-lg text-brand-dark mb-8">
+                Have a project in mind or want to learn more about our work? We'd love to hear from you.
+            </p>
+            <a href="mailto:contact@vector8.com" class="bg-brand-accent text-brand-primary font-bold py-4 px-10 rounded-md hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 inline-block">
+                Get in Touch
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-primary py-6 border-t border-brand-secondary">
+        <div class="container mx-auto text-center text-brand-dark">
+            <p>&copy; 2025 Vector8. All Rights Reserved.</p>
+            <p class="text-sm">Designed with passion in Singapore.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileMenuLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+        
+        // Header shadow on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-xl');
+            } else {
+                header.classList.remove('shadow-xl');
+            }
+        });
+
+        // Animate sections on scroll
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                    observer.unobserve(entry.target); // Animate only once
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+    </script>
+</body>
+</html>
